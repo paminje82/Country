@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 지구촌 국기 탐험대</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Splash Screen -->
+        <section id="splash-screen" class="screen">
+            <div class="content">
+                <div class="emoji-globe">🌍</div>
+                <h1>지구촌 국기 탐험대</h1>
+                <p>전 세계의 국기를 맞히고 명예의 성을 쌓아요!</p>
+                <button id="start-btn" class="btn primary">모험 시작하기</button>
+            </div>
+        </section>
+
+        <!-- Continent Selection Screen -->
+        <section id="continent-screen" class="screen hidden">
+            <h2>탐험할 대륙을 선택하세요</h2>
+            <div class="continent-grid">
+                <button class="continent-btn" data-continent="all">
+                    <span class="icon">🌏</span>
+                    <span class="name">전체</span>
+                    <span class="best-score" id="best-all">최고: 0</span>
+                </button>
+                <button class="continent-btn" data-continent="asia">
+                    <span class="icon">🍜</span>
+                    <span class="name">아시아</span>
+                    <span class="best-score" id="best-asia">최고: 0</span>
+                </button>
+                <button class="continent-btn" data-continent="europe">
+                    <span class="icon">🏰</span>
+                    <span class="name">유럽</span>
+                    <span class="best-score" id="best-europe">최고: 0</span>
+                </button>
+                <button class="continent-btn" data-continent="americas">
+                    <span class="icon">🗽</span>
+                    <span class="name">아메리카</span>
+                    <span class="best-score" id="best-americas">최고: 0</span>
+                </button>
+                <button class="continent-btn" data-continent="africa">
+                    <span class="icon">🦁</span>
+                    <span class="name">아프리카</span>
+                    <span class="best-score" id="best-africa">최고: 0</span>
+                </button>
+                <button class="continent-btn" data-continent="oceania">
+                    <span class="icon">🏄</span>
+                    <span class="name">오세아니아</span>
+                    <span class="best-score" id="best-oceania">최고: 0</span>
+                </button>
+            </div>
+            <button id="back-to-splash" class="btn secondary">뒤로 가기</button>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="screen hidden">
+            <div class="quiz-header">
+                <div class="score-box">점수: <span id="current-score">0</span></div>
+                <div class="lives-box" id="lives">❤️❤️❤️</div>
+            </div>
+            <!-- Timer Bar -->
+            <div class="timer-container">
+                <div id="timer-bar" class="timer-bar"></div>
+            </div>
+            <div class="flag-container">
+                <img id="flag-img" src="" alt="국기">
+            </div>
+            <div id="options-grid" class="options-grid">
+                <!-- Options will be injected here -->
+            </div>
+            <div class="combo-box hidden" id="combo-alert">🔥 <span id="combo-count">0</span> COMBO!</div>
+        </section>
+
+        <!-- Result Screen -->
+        <section id="result-screen" class="screen hidden">
+            <div class="result-card">
+                <h2 id="result-title">게임 종료!</h2>
+                <div class="final-stats">
+                    <p>최종 점수: <span id="final-score">0</span></p>
+                    <p>최고 기록 경신! 🎉</p>
+                </div>
+                <button id="restart-btn" class="btn primary">다시 도전하기</button>
+                <button id="home-btn" class="btn secondary">대륙 선택으로</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
